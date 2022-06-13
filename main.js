@@ -6,13 +6,13 @@ const addActiveClass = (entries, observer) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting && entry.intersectionRatio >= 0.1) {
       // console.log(entry.target);
-      let currentActive = document.querySelector('.desktop-nav a.active');
+      let currentActive = document.querySelector('.__nav a.active');
 
       if (currentActive) {
         currentActive.classList.remove('active');
       }
 
-      let newActive = document.querySelector(`.desktop-nav a[href="#${entry.target.getAttribute('id')}"]`);
+      let newActive = document.querySelector(`.__nav a[href="#${entry.target.getAttribute('id')}"]`);
 
       newActive.classList.add('active');
     }
